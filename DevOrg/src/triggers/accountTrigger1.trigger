@@ -8,6 +8,7 @@ trigger accountTrigger1 on Account (after update) {
     List<String> AccountName = new list<String>();
     List<Id> AccountId = new list<Id>();
     List<Id> ContactId = new list<Id>();
+    List<Id> OpportunityId = new list<Id>();
     
     EmailTemplate et=[Select id from EmailTemplate where DeveloperName =: 'CustomerPortalChangePwdEmail'];
     
