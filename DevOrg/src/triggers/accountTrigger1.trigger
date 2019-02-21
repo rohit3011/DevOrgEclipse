@@ -6,6 +6,7 @@ trigger accountTrigger1 on Account (after update) {
     List<Messaging.SingleEmailMessage> emailList1 = new List<Messaging.SingleEmailMessage>();  
     List<Id> accId = new list<Id>();
     List<String> AccountName = new list<String>();
+    List<Id> AccountId = new list<Id>();
     
     EmailTemplate et=[Select id from EmailTemplate where DeveloperName =: 'CustomerPortalChangePwdEmail'];
     
