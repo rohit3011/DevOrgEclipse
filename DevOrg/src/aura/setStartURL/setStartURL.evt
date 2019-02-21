@@ -1,0 +1,8 @@
+<aura:event type="APPLICATION">
+    <!-- passing the username on button click to the another component-->
+    <aura:attribute name="sUser" type="string"/>
+    <!-- attribute to pass the aura:id for the login screen div, to hide the login screen -->
+    <aura:attribute name="loginScreenId" type="string"/>
+    <!-- attribute to pass the aura:id for the user screen div, to show the user screen -->
+    <aura:attribute name="userScreenId" type="string"/>
+</aura:event>

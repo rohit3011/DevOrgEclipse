@@ -1,0 +1,62 @@
+<aura:component controller="LightningLoginFormController">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="usernameLabel" type="String" required="false" default="Username"/>
+    <aura:attribute name="passwordLabel" type="String" required="false" default="Password"/>
+    <aura:attribute name="loginButtonLabel" type="String" required="false" default="Log in"/>
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    
+    <!-- We need to call another component(an event) on button click, so we need to reister an event-->
+    <aura:registerevent name="setStartURL" type="c:setStartURL"/>
+    
+    <aura:dependency resource="c:setStartURL" type="EVENT"/>
+   	
+    <!-- <aura:handler event="c:setStartUrl" action="{!c.setStartUrl}"/>
+    <aura:handler name="c:setStartUrl" event="c:setStartUrl" action="{!c.handleComponentEvent}"/> -->
+    
+	<div class="bootstrap">
+		<c:PQHeader />
+		<div class="container-fluid">
+			<div class="container">
+
+				<form class="form-signin">
+					<div class="row"> 
+						<div class="col-xs-6 col-lg-4" style="width: 50%;background:#f7f7f7;" aura:id="loginView">
+							<div style="width:60%;padding-left:20px;">
+								<h2 class="form-signin-heading">Please sign in</h2>
+								
+								<div>
+									<ui:inputText value="" aura:id="username" placeholder="{!v.usernameLabel}" class="form-control" label="{!v.usernameLabel}" labelClass="assistiveText"/>
+								</div>
+								
+								<div>		
+									<ui:inputSecret value="" aura:id="password" placeholder="{!v.passwordLabel}" class="form-control" label="{!v.passwordLabel}" labelClass="assistiveText"/>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value="remember-me"/> Remember me
+									</label>
+								</div>
+								
+								<ui:button aura:id="submitButton" label="{!v.loginButtonLabel}" press="{!c.handleLogin}" class="btn btn-lg btn-primary btn-block"/>
+							</div>
+						</div>
+						
+						<div class="col-xs-6 col-lg-4" style="width: 50%;" aura:id="userView">
+						<!--	<div style="width:60%;padding-left:20px;">
+								<p>Username: {!v.usernameLabel}</p>
+								<p>Passowrd: {!v.passwordLabel}</p>
+								<p>Error Message: {!v.errorMessage}</p>
+							</div>-->
+                            <c:TestLoginUserDetails />    
+						</div>
+					</div>    
+				</form>
+			</div> 
+		</div>
+	</div>
+    <c:PQFooter />
+    
+</aura:component>

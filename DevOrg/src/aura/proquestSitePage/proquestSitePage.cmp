@@ -1,0 +1,58 @@
+<aura:component controller="proquestController">
+    
+    <aura:attribute name="contacts" type="Contact[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:handler event="c:SearchKeyChange" action="{!c.SearchKeyChange}"/>
+    	<aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    	<!-- PAGE HEADER -->
+<div class="slds-page-header" role="banner">
+  <div class="slds-grid">
+    <div class="slds-col slds-has-flexi-truncate">
+      <!-- HEADING AREA -->
+      <a class="navbar-brand" style="height: 100px;" href="http://disputebills.com"><img src="{!$Resource.PQLogo}" style="width:200px"/></a>
+    </div>
+    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+      <button class="slds-button slds-button--neutral">Home</button>
+      <button class="slds-button slds-button--neutral">Browse</button>
+      <button class="slds-button slds-button--neutral">Submit a Case</button>
+    </div>
+  </div>  
+</div>
+<!-- / PAGE HEADER -->
+
+    
+    	    
+    	<div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Lightning Component</a>
+            </div>
+        </div>
+    </div>
+
+    	<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <c:SearchBar />
+            
+        </div>
+        <div class="col-sm-8">
+            <c:ContactDetails />
+        </div>
+    </div>
+</div>
+    
+    
+    	<ul class="list-group" style="margin-top: 20px;">
+        	<aura:iteration items="{!v.contacts}" var="contact">
+            	<li class="list-group-item">
+                	<a onclick="{!c.navigateToRecord}">
+                        <p>{!contact.Name}</p>
+                        <p>{!contact.Phone}</p>
+                	</a>
+            	</li>
+        	</aura:iteration>
+    	</ul>
+    
+    
+</aura:component>

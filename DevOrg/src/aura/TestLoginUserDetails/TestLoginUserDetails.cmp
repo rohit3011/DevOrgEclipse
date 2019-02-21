@@ -1,0 +1,19 @@
+<!-- Component to show the details of the user who logged in successfully -->
+<aura:component controller="LightningLoginFormController">
+ <!--   <aura:attribute name="userDetail" type="String"/> -->
+	<aura:attribute name="userDetail" type="User"/> 
+    <!-- handle the event that is called by the previous component (TestLoginForm) -->
+    <aura:handler event="c:setStartURL" action="{!c.populatedetail}"/>
+    
+    <div style="width:100%;padding-left:20px;">
+        <p>User Id: {!v.userDetail.Id}</p>
+        <p>User Name: {!v.userDetail.Name}</p>
+        <p>Email: {!v.userDetail.Email}</p>
+        <p>Username: {!v.userDetail.Username}</p>
+    </div>	
+    
+ <!--   <div style="width:60%;padding-left:20px;">
+        <p>Username: {!v.userDetail}</p>
+    </div> -->
+    
+</aura:component>
