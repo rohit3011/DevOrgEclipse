@@ -1,5 +1,5 @@
 /* Try the following code */
-//adding comment from Eclipse
+//adding comment from Eclipseee
 trigger accountTrigger1 on Account (after update) {
     
     List<Messaging.SingleEmailMessage> emailList = new List<Messaging.SingleEmailMessage>();  
