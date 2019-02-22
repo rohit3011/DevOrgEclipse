@@ -1,5 +1,7 @@
 trigger ClosedOpportunityTrigger on Opportunity (after update, after insert) {
     
+    //first commit for ClosedOpportunity Trigger
+    
     set<Id> oppSet = new set<Id>();
     for(Opportunity opp : trigger.new){
         if(opp.StageName == 'Closed Won'){
