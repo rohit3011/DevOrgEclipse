@@ -4,6 +4,7 @@ trigger ClosedOpportunityTrigger on Opportunity (after update, after insert) {
     set<Id> oppSet1 = new set<Id>();
     set<Id> oppSet2 = new set<Id>();
     set<Id> oppSet3 = new set<Id>();
+    set<Id> oppSet4 = new set<Id>();
     
     for(Opportunity opp : trigger.new){
         if(opp.StageName == 'Closed Won'){
