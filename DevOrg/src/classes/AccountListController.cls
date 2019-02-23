@@ -14,4 +14,10 @@ public class AccountListController {
         return [ SELECT Id, Name, Industry, Type FROM Account LIMIT 10 ];
     }
     
+    //Create method for testing from GITBUG
+    @AuraEnabled
+    public static List < Account > fetchAcctsNew() {
+        return [ SELECT Id, Name, Industry, Type FROM Account LIMIT 10 ];
+}
+    
 }
