@@ -8,4 +8,10 @@ public class AccountListController {
         return [ SELECT Id, Name, Industry, Type FROM Account LIMIT 10 ];
     }
     
+    // Created method for test from Eclipse
+    @AuraEnabled
+    public static List < Account > fetchAccts2() {
+        return [ SELECT Id, Name, Industry, Type FROM Account LIMIT 10 ];
+    }
+    
 }
