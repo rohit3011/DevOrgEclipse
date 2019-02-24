@@ -1,5 +1,10 @@
 @RestResource(urlMapping='/Accounts/*/contacts')
 global class AccountManager {
+	
+	// test variable created from Eclipse 
+	public string Accname{get;set;}
+	public string AccPhone{get;set;}
+	
 	@HttpGet
     global static Account getAccount() {
         RestRequest request = RestContext.request;
