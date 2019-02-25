@@ -1,11 +1,12 @@
 @RestResource(urlMapping='/Accounts/*/contacts')
 global class AccountManager {
-	
-	// test variable created from Eclipse 
-	public string Accname{get;set;}
-	public string AccPhone{get;set;}
-	
-	@HttpGet
+
+    public final string test1;
+    public final string test2;
+    public final string test3;
+    public final string test4;
+
+    @HttpGet
     global static Account getAccount() {
         RestRequest request = RestContext.request;
         // grab the caseId from the end of the URL
