@@ -3,6 +3,7 @@ global class AccountManager {
 	//New Branch
     public final string test1;
     public final string test2;
+    public final string test3;
     
 
     @HttpGet
