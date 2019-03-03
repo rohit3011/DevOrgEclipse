@@ -7,6 +7,7 @@ public with sharing class AccountController{
     public final string test3;
     public final string test4;
     public final string test5;
+    public final string test6;
    
    @AuraEnabled
    public static list<Account> lstaccounts(){
